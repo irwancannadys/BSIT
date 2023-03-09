@@ -12,7 +12,7 @@ class BsitFragmentPagerAdapter(
     fragment: FragmentActivity,
     private val bundle: List<Bundle>,
 ) : FragmentStateAdapter(
-    fragment,
+    fragment
 ) {
 
     private val fragment = listOf(

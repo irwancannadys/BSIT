@@ -2,10 +2,10 @@ package com.irwan.bsit.di
 
 import com.irwan.bsit.BuildConfig
 import com.irwan.bsit.domain.Service
-import com.irwan.bsit.domain.TransactionRemoteDataSource
-import com.irwan.bsit.domain.TransactionRemoteDataSourceImpl
-import com.irwan.bsit.domain.repository.TransactionRepository
-import com.irwan.bsit.domain.repository.TransactionRepositoryImpl
+import com.irwan.bsit.domain.RemoteDataSource
+import com.irwan.bsit.domain.RemoteDataSourceImpl
+import com.irwan.bsit.domain.repository.Repository
+import com.irwan.bsit.domain.repository.RepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -52,11 +52,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRepository(transactionRemoteDataSource: TransactionRemoteDataSource): TransactionRepository =
-        TransactionRepositoryImpl(transactionRemoteDataSource)
+    fun provideRepository(remoteDataSource: RemoteDataSource): Repository =
+        RepositoryImpl(remoteDataSource)
 
     @Provides
     @Singleton
-    fun provideRemoteDataSource(service: Service): TransactionRemoteDataSource =
-        TransactionRemoteDataSourceImpl(service)
+    fun provideRemoteDataSource(service: Service): RemoteDataSource =
+        RemoteDataSourceImpl(service)
 }

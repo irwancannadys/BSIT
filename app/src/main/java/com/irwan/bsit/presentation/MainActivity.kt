@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setUpViewPager(listOf())
         setUpTabLayout()
         observeViewModel()
-//        mainViewModel.getTransaction()
+        mainViewModel.getTransaction()
     }
 
     private fun setUpViewPager(bundle: List<Bundle>) {
